@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Mitr:wght@500&display=swap");
+body {
+  background-image: url("four.jpg");
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  text-align: center;
+  font-family: "Mitr";
+  font-size: 60px;
+  color: #0e0b44;
+}
+button {
+  font-family: Rubik;
+  font-size: 20px;
+  padding: 15px 20px;
+  margin: 10px;
+  background-color: rgb(23, 58, 24);
+  border-radius: 25px;
+  border: none;
+  color: beige;
+}
+button:hover {
+  box-shadow: 0 10px 10px rgba(14, 156, 38, 0.397);
+  background-color: rgb(51, 104, 53);
+}
+div {
+  margin: auto;
+  text-align: center;
+}

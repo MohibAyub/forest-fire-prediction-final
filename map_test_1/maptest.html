@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        color: rgb(44, 1, 1);
+        line-height: 1.5;
+        background-repeat: no-repeat; 
+        background-size: 100% 100%;
+    }
+  </style>
+
+    <title>Forest Fires Analysis</title>
+
+    <link rel="stylesheet" type="text/css" href="css/maptest.css" />
+    <link rel="stylesheet" type="text/css" href="css/chartfloat.css" />
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059"/>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  </head>
+
+  <body background="img/new_background.jpg">
+    <br>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">PREDICT <span
+      class="w3-hide-small">FOREST</span> FIRES</span>
+    <br/>
+    <div class="page-header">
+        <h1>Analyse Forest Fire Risk</h1>
+        <p>Use the moveable marker on the forest map to get latitude & longitude values.</p>
+    </div>
+    
+    <p>This webpage displays the moveable map of <b>Montesinho Natural Park</b>, including a marker. The marker can also be moved around the map.</p>
+
+    <div id="map"></div>
+
+    <h3>How this works?</h3>
+
+    <p>The draggble marker on the forest map when dropped at a given location receives the coordinates of the location as latitude & longitude pairs.
+      These latitude and longitude values are used by &nbsp;<code>openweathermap</code>&nbsp; API to obtain real-time weather attributes (Temperature, RH, Wind, Rain) of the given coordinates.
+      The weather attributes are used to evaluate various indices of the Fire Weather Index (FWI) (FFMC, DMC, DC, ISI etc.) and the risk of fire is predicted on the 
+      basis of these indices given as inputs to a deep neural network model.
+    </p>
+    <br>
+    <h4>Analysis of the forest map is shown below with the help of appropriate visualizations</h4>
+    <br/>
+
+    <div id="heatchart"></div>
+
+    <div id="heatchartannotate"></div>
+
+    <div class="float-container" style=" width: 120%;">
+      <!-- <div class="float-child"> -->
+        <div style="width: 45%; height: 45%;float:left;" id="radchart" ></div>
+      <!-- </div> -->
+      <!-- <div class="float-child"> -->
+        <div style="width: 48%; height: 48%;float:right; padding-top:50px; " id="piechart"></div>
+      <!-- </div> -->
+    </div>
+  
+    <br><br><br><br>
+    <div class="w3-half w3-row-padding" style="padding-top:20px; padding-left:39%;">
+      <h5 id="text"></h5>
+      <h6 id="h5"></h6>
+      <button class="w3-button w3-black w3-center w3-section w3-xlarge" type="submit" id="graph">
+        PREDICT FIRE OCCURENCE RISK
+      </button>
+    </div>
+    <br/><br/><br/><br/>
+
+    <script type="text/javascript" src="js/radchart.js"></script>
+    <script type="text/javascript" src="js/piechart.js"></script>
+    <script type="text/javascript" src="js/heatchart.js"></script>
+    <script type="text/javascript" src="js/heatchartannotate.js"></script>
+    <script type="text/javascript" src='js/maptest.js'></script>
+  </body>
+</html>
